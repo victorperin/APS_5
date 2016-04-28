@@ -1,6 +1,6 @@
 ﻿namespace APS_5
 {
-    partial class Form1
+    partial class TelaInicial
     {
         /// <summary>
         /// Required designer variable.
