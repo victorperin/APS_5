@@ -17,6 +17,9 @@ namespace APS_5
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new TelaInicial());
+	// batata frita
+	// lol
+	dsaasddas
         }
     }
 }
