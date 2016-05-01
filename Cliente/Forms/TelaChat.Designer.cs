@@ -31,9 +31,9 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TelaChat));
             this.Send = new System.Windows.Forms.Button();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
-            this.richTextBox3 = new System.Windows.Forms.RichTextBox();
+            this.BoxMensagens = new System.Windows.Forms.RichTextBox();
+            this.BoxMensagemEnviar = new System.Windows.Forms.RichTextBox();
+            this.BoxUsuariosSala = new System.Windows.Forms.RichTextBox();
             this.SuspendLayout();
             // 
             // Send
@@ -49,50 +49,50 @@
             this.Send.UseVisualStyleBackColor = false;
             this.Send.Click += new System.EventHandler(this.button1_Click);
             // 
-            // richTextBox1
+            // BoxMensagens
             // 
-            this.richTextBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.BoxMensagens.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.richTextBox1.Enabled = false;
-            this.richTextBox1.Location = new System.Drawing.Point(12, 12);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.ReadOnly = true;
-            this.richTextBox1.Size = new System.Drawing.Size(547, 282);
-            this.richTextBox1.TabIndex = 1;
-            this.richTextBox1.Text = "";
-            this.richTextBox1.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged);
+            this.BoxMensagens.Enabled = false;
+            this.BoxMensagens.Location = new System.Drawing.Point(12, 12);
+            this.BoxMensagens.Name = "BoxMensagens";
+            this.BoxMensagens.ReadOnly = true;
+            this.BoxMensagens.Size = new System.Drawing.Size(547, 282);
+            this.BoxMensagens.TabIndex = 1;
+            this.BoxMensagens.Text = "";
+            this.BoxMensagens.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged);
             // 
-            // richTextBox2
+            // BoxMensagemEnviar
             // 
-            this.richTextBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.BoxMensagemEnviar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.richTextBox2.Location = new System.Drawing.Point(12, 313);
-            this.richTextBox2.Name = "richTextBox2";
-            this.richTextBox2.Size = new System.Drawing.Size(547, 74);
-            this.richTextBox2.TabIndex = 2;
-            this.richTextBox2.Text = "";
+            this.BoxMensagemEnviar.Location = new System.Drawing.Point(12, 313);
+            this.BoxMensagemEnviar.Name = "BoxMensagemEnviar";
+            this.BoxMensagemEnviar.Size = new System.Drawing.Size(547, 74);
+            this.BoxMensagemEnviar.TabIndex = 2;
+            this.BoxMensagemEnviar.Text = "";
             // 
-            // richTextBox3
+            // BoxUsuariosSala
             // 
-            this.richTextBox3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.BoxUsuariosSala.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.richTextBox3.BackColor = System.Drawing.SystemColors.Window;
-            this.richTextBox3.Enabled = false;
-            this.richTextBox3.Location = new System.Drawing.Point(565, 12);
-            this.richTextBox3.Name = "richTextBox3";
-            this.richTextBox3.Size = new System.Drawing.Size(146, 282);
-            this.richTextBox3.TabIndex = 3;
-            this.richTextBox3.Text = "";
+            this.BoxUsuariosSala.BackColor = System.Drawing.SystemColors.Window;
+            this.BoxUsuariosSala.Enabled = false;
+            this.BoxUsuariosSala.Location = new System.Drawing.Point(565, 12);
+            this.BoxUsuariosSala.Name = "BoxUsuariosSala";
+            this.BoxUsuariosSala.Size = new System.Drawing.Size(146, 282);
+            this.BoxUsuariosSala.TabIndex = 3;
+            this.BoxUsuariosSala.Text = "";
             // 
             // TelaChat
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(723, 399);
-            this.Controls.Add(this.richTextBox3);
-            this.Controls.Add(this.richTextBox2);
-            this.Controls.Add(this.richTextBox1);
+            this.Controls.Add(this.BoxUsuariosSala);
+            this.Controls.Add(this.BoxMensagemEnviar);
+            this.Controls.Add(this.BoxMensagens);
             this.Controls.Add(this.Send);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -108,9 +108,9 @@
         
         
         private System.Windows.Forms.Button Send;
-        private System.Windows.Forms.RichTextBox richTextBox1;
-        private System.Windows.Forms.RichTextBox richTextBox2;
-        private System.Windows.Forms.RichTextBox richTextBox3;
+        private System.Windows.Forms.RichTextBox BoxMensagens;
+        private System.Windows.Forms.RichTextBox BoxMensagemEnviar;
+        private System.Windows.Forms.RichTextBox BoxUsuariosSala;
 
 
     }
