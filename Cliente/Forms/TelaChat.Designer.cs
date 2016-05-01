@@ -30,26 +30,26 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TelaChat));
-            this.Send = new System.Windows.Forms.Button();
+            this.EnviarBotao = new System.Windows.Forms.Button();
             this.BoxMensagens = new System.Windows.Forms.RichTextBox();
             this.BoxMensagemEnviar = new System.Windows.Forms.RichTextBox();
             this.BoxUsuariosSala = new System.Windows.Forms.RichTextBox();
             this.SuspendLayout();
             // 
-            // Send
+            // EnviarBotao
             // 
-            this.Send.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.Send.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.Send.Cursor = System.Windows.Forms.Cursors.Default;
-            this.Send.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Send.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Send.Location = new System.Drawing.Point(565, 313);
-            this.Send.Name = "Send";
-            this.Send.Size = new System.Drawing.Size(146, 74);
-            this.Send.TabIndex = 0;
-            this.Send.Text = "Enviar";
-            this.Send.UseVisualStyleBackColor = false;
-            this.Send.Click += new System.EventHandler(this.button1_Click);
+            this.EnviarBotao.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.EnviarBotao.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.EnviarBotao.Cursor = System.Windows.Forms.Cursors.Default;
+            this.EnviarBotao.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.EnviarBotao.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.EnviarBotao.Location = new System.Drawing.Point(565, 313);
+            this.EnviarBotao.Name = "EnviarBotao";
+            this.EnviarBotao.Size = new System.Drawing.Size(146, 74);
+            this.EnviarBotao.TabIndex = 0;
+            this.EnviarBotao.Text = "Enviar";
+            this.EnviarBotao.UseVisualStyleBackColor = false;
+            this.EnviarBotao.Click += new System.EventHandler(this.button1_Click);
             // 
             // BoxMensagens
             // 
@@ -99,7 +99,7 @@
             this.Controls.Add(this.BoxUsuariosSala);
             this.Controls.Add(this.BoxMensagemEnviar);
             this.Controls.Add(this.BoxMensagens);
-            this.Controls.Add(this.Send);
+            this.Controls.Add(this.EnviarBotao);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "TelaChat";
@@ -114,7 +114,7 @@
         private System.Windows.Forms.RichTextBox BoxMensagens;
         private System.Windows.Forms.RichTextBox BoxMensagemEnviar;
         private System.Windows.Forms.RichTextBox BoxUsuariosSala;
-        private System.Windows.Forms.Button Send;
+        private System.Windows.Forms.Button EnviarBotao;
 
 
     }
