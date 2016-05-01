@@ -10,6 +10,7 @@ namespace APS_5.Code
     {
         public static bool EnviarMensagem(string mensagem)
         {
+          //  Telas.telaChat
             return true;
         }
 

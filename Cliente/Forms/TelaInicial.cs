@@ -28,10 +28,15 @@ namespace APS_5.Forms
                 MessageBox.Show("Nome Inválido, não é permitido o uso de espaço.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
             }
-
-            Telas.telaChat = new TelaChat();
-            Telas.telaChat.Show();
-            Telas.telaInicial.Close(true);
+            if (ComunicacaoServidor.EnviarMensagem(NomeUsuario))
+            {
+                Telas.telaChat = new TelaChat();
+                Telas.telaChat.Show();
+                Telas.telaInicial.Close(true);
+            }
+            else {
+                MessageBox.Show("Nome Inválido.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
         }
 
         private void TelaInicial_Load(object sender, EventArgs e)
