@@ -39,7 +39,9 @@
             // Send
             // 
             this.Send.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.Send.BackColor = System.Drawing.Color.Silver;
+            this.Send.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.Send.Cursor = System.Windows.Forms.Cursors.Default;
+            this.Send.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Send.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Send.Location = new System.Drawing.Point(565, 313);
             this.Send.Name = "Send";
@@ -54,6 +56,7 @@
             this.BoxMensagens.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.BoxMensagens.BackColor = System.Drawing.SystemColors.MenuBar;
             this.BoxMensagens.Enabled = false;
             this.BoxMensagens.Location = new System.Drawing.Point(12, 12);
             this.BoxMensagens.Name = "BoxMensagens";
@@ -67,6 +70,7 @@
             // 
             this.BoxMensagemEnviar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.BoxMensagemEnviar.BackColor = System.Drawing.SystemColors.Window;
             this.BoxMensagemEnviar.Location = new System.Drawing.Point(12, 313);
             this.BoxMensagemEnviar.Name = "BoxMensagemEnviar";
             this.BoxMensagemEnviar.Size = new System.Drawing.Size(547, 74);
@@ -77,7 +81,8 @@
             // 
             this.BoxUsuariosSala.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.BoxUsuariosSala.BackColor = System.Drawing.SystemColors.Window;
+            this.BoxUsuariosSala.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.BoxUsuariosSala.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.BoxUsuariosSala.Enabled = false;
             this.BoxUsuariosSala.Location = new System.Drawing.Point(565, 12);
             this.BoxUsuariosSala.Name = "BoxUsuariosSala";
@@ -89,6 +94,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(63)))), ((int)(((byte)(70)))));
             this.ClientSize = new System.Drawing.Size(723, 399);
             this.Controls.Add(this.BoxUsuariosSala);
             this.Controls.Add(this.BoxMensagemEnviar);
@@ -104,13 +110,11 @@
         }
 
         #endregion
-       
-        
-        
-        private System.Windows.Forms.Button Send;
+
         private System.Windows.Forms.RichTextBox BoxMensagens;
         private System.Windows.Forms.RichTextBox BoxMensagemEnviar;
         private System.Windows.Forms.RichTextBox BoxUsuariosSala;
+        private System.Windows.Forms.Button Send;
 
 
     }
