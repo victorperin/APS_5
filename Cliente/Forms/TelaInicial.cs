@@ -21,6 +21,14 @@ namespace APS_5.Forms
 
         private void button1_Click(object sender, EventArgs e)
         {
+            var NomeUsuario = textBox1.Text;
+            string AntiBug = @"(\s+|^$)";
+            if (System.Text.RegularExpressions.Regex.IsMatch(NomeUsuario, AntiBug))
+            {
+                MessageBox.Show("Nome Inválido, não é permitido o uso de espaço.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return;
+            }
+
             Telas.telaChat = new TelaChat();
             Telas.telaChat.Show();
             Telas.telaInicial.Close(true);
