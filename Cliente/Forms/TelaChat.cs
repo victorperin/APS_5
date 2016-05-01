@@ -25,5 +25,15 @@ namespace APS_5.Forms
         {
 
         }
+
+        private void richTextBox1_TextChanged(object sender, EventArgs e)
+        {
+        
+        }
+
+        private void TelaChat_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
