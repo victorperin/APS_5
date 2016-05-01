@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using APS_5.Forms;
 
-namespace APS_5
+namespace APS_5.Code
 {
     static class Program
     {
@@ -16,7 +17,11 @@ namespace APS_5
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new TelaInicial());
+
+            Telas.telaInicial = new TelaInicial();
+            Telas.telaInicial.Show();
+
+            Application.Run();
         }
     }
 }
