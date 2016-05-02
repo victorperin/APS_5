@@ -28,7 +28,7 @@ namespace APS_5.Forms
                 MessageBox.Show("Nome Inválido, não é permitido o uso de espaço.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
             }
-            if (ComunicacaoServidor.EnviarMensagem(NomeUsuario))
+            if (ComunicacaoServidor.EnviarNome(NomeUsuario))
             {
                 Telas.telaChat = new TelaChat();
                 Telas.telaChat.Show();
@@ -45,6 +45,11 @@ namespace APS_5.Forms
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
         {
 
         }

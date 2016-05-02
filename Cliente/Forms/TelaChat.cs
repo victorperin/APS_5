@@ -1,4 +1,5 @@
-﻿using System;
+﻿using APS_5.Code;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -6,6 +7,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace APS_5.Forms
 {
@@ -13,6 +15,7 @@ namespace APS_5.Forms
     {
         public TelaChat()
         {
+            
             InitializeComponent();
         }
 
@@ -24,11 +27,20 @@ namespace APS_5.Forms
         private void button1_Click(object sender, EventArgs e)
         {
 
+            if (ComunicacaoServidor.EnviarMensagem(BoxMensagemEnviar.Text))
+            {
+                BoxMensagemEnviar.Clear();
+            }
+
+            else
+            {
+                MessageBox.Show("Não foi possível enviar sua mensagem, verifique sua conexão", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
         }
 
         private void richTextBox1_TextChanged(object sender, EventArgs e)
         {
-        
+            
         }
 
         private void TelaChat_Load(object sender, EventArgs e)
