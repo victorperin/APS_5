@@ -22,9 +22,7 @@ namespace Servidor
             Console.WriteLine("Listening on: " + Comunicacao.getAddress());
             while (true)
             {
-                var listener = Comunicacao.Listener();
-                if (listener != null)
-                    Console.WriteLine(listener.Data.blablabla);
+                GerenciadorDeExecucao.Gerenciar(Comunicacao.Listener());
             }
                 
         }
