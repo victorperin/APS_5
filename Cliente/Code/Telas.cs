@@ -13,6 +13,7 @@ namespace APS_5.Code
         public static TelaChat telaChat;
         public static TelaChat telaMenu;
         public static TelaChat telaOnline;
+        public static TelaConfig telaConfig;
 
     }
 }

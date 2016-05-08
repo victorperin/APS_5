@@ -24,7 +24,25 @@ namespace APS_5.Forms
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+
+
+        private void richTextBox1_TextChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void TelaChat_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            Telas.telaConfig = new TelaConfig();
+            Telas.telaConfig.Show();
+        }
+
+        private void EnviarBotao_Click(object sender, EventArgs e)
         {
 
             if (ComunicacaoServidor.EnviarMensagem(BoxMensagemEnviar.Text))
@@ -36,16 +54,8 @@ namespace APS_5.Forms
             {
                 MessageBox.Show("Não foi possível enviar sua mensagem, verifique sua conexão", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
-        }
-
-        private void richTextBox1_TextChanged(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void TelaChat_Load(object sender, EventArgs e)
-        {
 
         }
+
     }
 }
