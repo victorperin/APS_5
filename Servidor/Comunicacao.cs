@@ -12,8 +12,7 @@ namespace Servidor
 {
     static class Comunicacao
     {
-        const int PORT_NO = 5000;
-        const string SERVER_IP = "127.0.0.1";
+        const int PORT_NO = 3000;
         public static void Send(Request requestToSend)
         {
             try
@@ -51,46 +50,64 @@ namespace Servidor
 
         public static Request Listener()
         {
-            //---listen at the specified IP and port no.---
+            
             try
             {
-                IPAddress localAdd = IPAddress.Parse(SERVER_IP);
+                //listen at the specified IP and port no.
+                IPAddress localAdd = IPAddress.Parse(GetLocalIPAddress());
                 TcpListener listener = new TcpListener(localAdd, PORT_NO);
-                Console.WriteLine("Listening... Port: " + PORT_NO);
                 listener.Start();
 
-                //---incoming client connected---
+                //incoming client connected
                 TcpClient client = listener.AcceptTcpClient();
 
-                //---get the incoming data through a network stream---
+                //get the incoming data through a network stream
                 NetworkStream nwStream = client.GetStream();
                 byte[] buffer = new byte[client.ReceiveBufferSize];
 
-                //---read incoming stream---
+                //read incoming stream
                 int bytesRead = nwStream.Read(buffer, 0, client.ReceiveBufferSize);
 
-                //---convert the data received into a json and return as a Request---
+                //convert the data received into a json and return as a Request
                 string dataReceived = Encoding.ASCII.GetString(buffer, 0, bytesRead);
                 
 
-                //---write back the text to the client---
-                //Console.WriteLine("Sending back : " + dataReceived);
+                //write back the text to the client
                 nwStream.Write(buffer, 0, bytesRead);
                 //client.Close();
                 listener.Stop();
 
-                return new Request { Client = client, Data = JsonConvert.DeserializeObject(dataReceived) };
+                return new Request { Client = client, Stream = nwStream, Data = JsonConvert.DeserializeObject(dataReceived) };
             }catch(Exception e){
                 return null;
             }
 
             
         }
-
+        public static void SendResponse(Request request){
+            byte[] buffer = new byte[request.Client.ReceiveBufferSize];
+        }
+        private static string GetLocalIPAddress()
+        {
+            var host = Dns.GetHostEntry(Dns.GetHostName());
+            foreach (var ip in host.AddressList)
+            {
+                if (ip.AddressFamily == AddressFamily.InterNetwork)
+                {
+                    return ip.ToString();
+                }
+            }
+            throw new Exception("Local IP Address Not Found!");
+        }
+        public static string getAddress()
+        {
+            return GetLocalIPAddress()+":"+PORT_NO;
+        }
     }
     public class Request
     {
         public TcpClient Client { get; set; }
+        public NetworkStream Stream { get; set; }
         public dynamic Data { get; set; }
     }
 }

@@ -12,12 +12,13 @@ namespace Servidor
     {
         static void Main(string[] args)
         {
-            //RepeaterListener();
-            RepeaterSend();
+            RepeaterListener();
+            //RepeaterSend();
         }
 
         static void RepeaterListener()
         {
+            Console.WriteLine("Listening on: " + Comunicacao.getAddress());
             while (true)
             {
                 var listener = Comunicacao.Listener();
