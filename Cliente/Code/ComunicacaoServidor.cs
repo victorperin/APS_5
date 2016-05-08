@@ -8,15 +8,21 @@ namespace APS_5.Code
 {
     static class ComunicacaoServidor
     {
+        private static Connection conexao;
         public static bool EnviarMensagem(string mensagem)
         {
           //  Telas.telaChat
             return true;
         }
 
-        public static bool EnviarNome(string nome)
+        public static bool Conectar(string nome, string servidor)
         {
-            return true;
+            conexao = new Connection(servidor);
+            string resposta = conexao.SendData("{\"tipo\": \"definir-nome\", \"nome\": \"" + nome + "\"}");
+            if (resposta == "{\"status\":\"ok\"}")
+                return true;
+            else
+                return false;
         }
 
        // public static bool VerificarNovasMensagens(string)

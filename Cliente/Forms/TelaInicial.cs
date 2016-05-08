@@ -28,7 +28,7 @@ namespace APS_5.Forms
                 MessageBox.Show("Nome Inválido, não é permitido o uso de espaço.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
             }
-            if (ComunicacaoServidor.EnviarNome(NomeUsuario))
+            if (ComunicacaoServidor.Conectar(NomeUsuario, "192.168.1.118"))
             {
                 Telas.telaChat = new TelaChat();
                 Telas.telaChat.Show();
