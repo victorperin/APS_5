@@ -32,8 +32,16 @@ namespace Servidor
             {
                 Random r = new Random();
                 Console.WriteLine(r.Next(5, 10));
-                TcpClient client = new TcpClient("127.0.0.1", 5000);
-                Comunicacao.Send(new Request { Client = client, Data = new { teste = 10, blablabla = "teste" } });
+                try
+                {
+                    TcpClient client = new TcpClient("127.0.0.1", 5000);
+                    Comunicacao.Send(new Request { Client = client, Data = new { teste = 10, blablabla = "teste" } });
+                }
+                catch (Exception e)
+                {
+                }
+                
+                
             }
         }
     }

@@ -30,10 +30,10 @@ namespace Servidor
                 nwStream.Write(bytesToSend, 0, bytesToSend.Length);
 
                 //---read back the text---
-                //byte[] bytesToRead = new byte[client.ReceiveBufferSize];
+                byte[] bytesToRead = new byte[client.ReceiveBufferSize];
 
-                //int bytesRead = nwStream.Read(bytesToRead, 0, client.ReceiveBufferSize);
-                //Console.WriteLine("Received : " + Encoding.ASCII.GetString(bytesToRead, 0, bytesRead));
+                int bytesRead = nwStream.Read(bytesToRead, 0, client.ReceiveBufferSize);
+                Console.WriteLine("Received : " + Encoding.ASCII.GetString(bytesToRead, 0, bytesRead));
                 client.Close();
             }
             catch (SocketException e)
@@ -71,13 +71,15 @@ namespace Servidor
 
                 //---convert the data received into a json and return as a Request---
                 string dataReceived = Encoding.ASCII.GetString(buffer, 0, bytesRead);
-                return new Request { Client = client, Data = JsonConvert.DeserializeObject(dataReceived) };
+                
 
                 //---write back the text to the client---
                 //Console.WriteLine("Sending back : " + dataReceived);
-                //nwStream.Write(buffer, 0, bytesRead);
-                client.Close();
+                nwStream.Write(buffer, 0, bytesRead);
+                //client.Close();
                 listener.Stop();
+
+                return new Request { Client = client, Data = JsonConvert.DeserializeObject(dataReceived) };
             }catch(Exception e){
                 return null;
             }
