@@ -98,6 +98,7 @@
             // 
             // BotaoConfigChat
             // 
+            this.BotaoConfigChat.AllowDrop = true;
             this.BotaoConfigChat.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.BotaoConfigChat.BackColor = System.Drawing.Color.Black;
             this.BotaoConfigChat.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BotaoConfigChat.BackgroundImage")));
