@@ -47,5 +47,10 @@ namespace APS_5.Forms
         {
 
         }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }
