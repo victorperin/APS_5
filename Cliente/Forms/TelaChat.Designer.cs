@@ -95,6 +95,7 @@
             this.EnviarBotao.TabIndex = 5;
             this.EnviarBotao.UseCompatibleTextRendering = true;
             this.EnviarBotao.UseVisualStyleBackColor = false;
+            this.EnviarBotao.Click += new System.EventHandler(this.EnviarBotao_Click);
             // 
             // BotaoConfigChat
             // 
