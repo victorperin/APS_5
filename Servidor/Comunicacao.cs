@@ -7,6 +7,7 @@ using System.Net.Sockets;
 using System.Threading;
 using System.Net;
 using Newtonsoft.Json;
+using Servidor.Model;
 
 namespace Servidor
 {
@@ -103,11 +104,5 @@ namespace Servidor
         {
             return GetLocalIPAddress()+":"+PORT_NO;
         }
-    }
-    public class Request
-    {
-        public TcpClient Client { get; set; }
-        public NetworkStream Stream { get; set; }
-        public dynamic Data { get; set; }
     }
 }
