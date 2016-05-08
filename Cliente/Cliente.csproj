@@ -50,6 +50,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Code\ComunicacaoServidor.cs" />
+    <Compile Include="Code\Connection.cs" />
     <Compile Include="Code\Mensagem.cs" />
     <Compile Include="Code\Telas.cs" />
     <Compile Include="Forms\FormBridge.cs">
