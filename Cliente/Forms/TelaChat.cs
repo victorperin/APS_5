@@ -39,7 +39,7 @@ namespace APS_5.Forms
         private void button1_Click_1(object sender, EventArgs e)
         {
             Telas.telaConfig = new TelaConfig();
-            Telas.telaChat.Show();
+            Telas.telaConfig.Show();
         }
 
         private void EnviarBotao_Click(object sender, EventArgs e)
