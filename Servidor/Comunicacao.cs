@@ -74,7 +74,7 @@ namespace Servidor
                 
 
                 //write back the text to the client
-                nwStream.Write(buffer, 0, bytesRead);
+                //nwStream.Write(buffer, 0, bytesRead);
                 //client.Close();
                 listener.Stop();
 
@@ -85,8 +85,13 @@ namespace Servidor
 
             
         }
-        public static void SendResponse(Request request){
-            byte[] buffer = new byte[request.Client.ReceiveBufferSize];
+        public static void SendResponse(Request request, dynamic data)
+        {
+            NetworkStream nwStream = request.Client.GetStream();
+            string stringToSend = JsonConvert.SerializeObject(data);
+            byte[] bytesToSend = ASCIIEncoding.ASCII.GetBytes(stringToSend);
+
+            nwStream.Write(bytesToSend, 0, bytesToSend.Length);
         }
         private static string GetLocalIPAddress()
         {
