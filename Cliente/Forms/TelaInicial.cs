@@ -22,20 +22,21 @@ namespace APS_5.Forms
         private void button1_Click(object sender, EventArgs e)
         {
             var NomeUsuario = textBox1.Text;
+            var IPServidor = textBox2.Text;
             string AntiBug = @"(\s+|^$)";
             if (System.Text.RegularExpressions.Regex.IsMatch(NomeUsuario, AntiBug))
             {
                 MessageBox.Show("Nome Inválido, não é permitido o uso de espaço.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
             }
-            if (ComunicacaoServidor.Conectar(NomeUsuario, "192.168.1.118"))
+            if (ComunicacaoServidor.Conectar(NomeUsuario, IPServidor))
             {
                 Telas.telaChat = new TelaChat();
                 Telas.telaChat.Show();
                 Telas.telaInicial.Close(true);
             }
             else {
-                MessageBox.Show("Nome Inválido.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("Nome ou IP inválido", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
 
@@ -53,5 +54,20 @@ namespace APS_5.Forms
         {
 
         }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void toolTip1_Popup(object sender, PopupEventArgs e)
+        {
+
+        }
+
+        private void Form1_Load(object sender, System.EventArgs e)
+        {
+        }
+         
     }
 }
