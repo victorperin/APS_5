@@ -17,13 +17,26 @@ namespace APS_5.Code
 
         public static bool Conectar(string nome, string servidor)
         {
-            conexao = new Connection(servidor);
-            dynamic resposta = conexao.SendData(new { tipo = "definir-nome", nome = nome});
-            if (resposta.status == "ok")
-                return true;
-            else
+
+
+
+            try
+            {
+                conexao = new Connection(servidor);
+                dynamic resposta = conexao.SendData(new { tipo = "definir-nome", nome = nome});
+                if (resposta.status == "ok")
+                    return true;
+                else
+                    return false;
+            }
+
+            catch(Exception e) {
+
+
                 return false;
-        }
+            
+            }
+         }
 
        // public static bool VerificarNovasMensagens(string)
         public static Mensagem ReceberMensagem()
