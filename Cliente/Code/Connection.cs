@@ -28,7 +28,10 @@ namespace APS_5.Code
 
             int bytesRead = nwStream.Read(bytesToRead, 0, servidor.ReceiveBufferSize);
 
-            return JsonConvert.DeserializeObject(Encoding.ASCII.GetString(bytesToRead, 0, bytesRead));
+            var stringRead = Encoding.ASCII.GetString(bytesToRead, 0, bytesRead);
+            var objectRead = JsonConvert.DeserializeObject(stringRead);
+
+            return objectRead;
         }
 
         public void Reconnect(){

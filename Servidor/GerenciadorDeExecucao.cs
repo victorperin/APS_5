@@ -12,10 +12,13 @@ namespace Servidor
         public static void Gerenciar(Request request) {
             try
             {
-                if (request.Data.tipo == "definir-nome")
-                    Console.WriteLine(request.Data.nome);
-                if (request.Data.tipo == "Mensagem")
-                    Console.WriteLine(request.Data.texto);
+                switch ((string)request.Data.tipo)
+                {
+                    case "definir-nome":
+                        Console.WriteLine("Usuario "+request.Data.nome+" conectou.");
+                        Comunicacao.SendResponse(request, new { status="ok" });
+                        break;
+                }
             }
             catch (Exception e)
             {
