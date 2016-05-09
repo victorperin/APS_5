@@ -19,11 +19,12 @@ namespace APS_5.Code
         {
 
 
+
             try
             {
                 conexao = new Connection(servidor);
-                string resposta = conexao.SendData("{\"tipo\": \"definir-nome\", \"nome\": \"" + nome + "\"}");
-                if (resposta == "{\"status\":\"ok\"}")
+                dynamic resposta = conexao.SendData(new { tipo = "definir-nome", nome = nome});
+                if (resposta.status == "ok")
                     return true;
                 else
                     return false;

@@ -1,5 +1,7 @@
 ﻿using System.Text;
 using System.Net.Sockets;
+using System;
+using Newtonsoft.Json;
 
 namespace APS_5.Code
 {
@@ -9,22 +11,24 @@ namespace APS_5.Code
         private string endereco;
         private TcpClient servidor;
 
-        public Connection(string enderecoTemp) { 
-            endereco = enderecoTemp;
-            servidor = new TcpClient(endereco, PORTA);
+        public Connection(string enderecoTemp) {
+                endereco = enderecoTemp;
+                servidor = new TcpClient(endereco, PORTA);
+
         }
 
-        public string SendData(string data)
+        public dynamic SendData(dynamic data)
         {
             NetworkStream nwStream = servidor.GetStream();
-            byte[] bytesToSend = ASCIIEncoding.ASCII.GetBytes(data);
+            string dataString = JsonConvert.SerializeObject(data);
+            byte[] bytesToSend = ASCIIEncoding.ASCII.GetBytes(dataString);
             nwStream.Write(bytesToSend, 0, bytesToSend.Length);
 
             byte[] bytesToRead = new byte[servidor.ReceiveBufferSize];
 
             int bytesRead = nwStream.Read(bytesToRead, 0, servidor.ReceiveBufferSize);
 
-            return Encoding.ASCII.GetString(bytesToRead, 0, bytesRead);
+            return JsonConvert.DeserializeObject(Encoding.ASCII.GetString(bytesToRead, 0, bytesRead));
         }
 
         public void Reconnect(){
