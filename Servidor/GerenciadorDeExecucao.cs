@@ -9,6 +9,17 @@ namespace Servidor
 {
     static class GerenciadorDeExecucao
     {
+        private static IList<Request> conexoes = new List<Request>();
+
+        private static IList<string> UsuariosOnline()
+        {
+            IList<string> usuarios = new List<string>();
+            foreach (var conexao in conexoes)
+            {
+                usuarios.Add(conexao.NomeUsuario);
+            }
+            return usuarios;
+        }
         public static void Gerenciar(Request request) {
             try
             {
@@ -16,7 +27,15 @@ namespace Servidor
                 {
                     case "definir-nome":
                         Console.WriteLine("Usuario "+request.Data.nome+" conectou.");
+                        request.NomeUsuario = request.Data.nome;
+                        conexoes.Add(request);
                         Comunicacao.SendResponse(request, new { status="ok" });
+                        break;
+
+                    case "obter-usuarios-online":
+                        Comunicacao.SendResponse(request, UsuariosOnline());
+                        break;
+                    default:
                         break;
                 }
             }

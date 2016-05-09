@@ -7,5 +7,6 @@ namespace Servidor.Model
             public TcpClient Client { get; set; }
             public NetworkStream Stream { get; set; }
             public dynamic Data { get; set; }
+            public string NomeUsuario { get; set; }
         }
 }
