@@ -18,8 +18,8 @@ namespace APS_5.Code
         public static bool Conectar(string nome, string servidor)
         {
             conexao = new Connection(servidor);
-            string resposta = conexao.SendData("{\"tipo\": \"definir-nome\", \"nome\": \"" + nome + "\"}");
-            if (resposta == "{\"status\":\"ok\"}")
+            dynamic resposta = conexao.SendData(new { tipo = "definir-nome", nome = nome});
+            if (resposta.status == "ok")
                 return true;
             else
                 return false;
