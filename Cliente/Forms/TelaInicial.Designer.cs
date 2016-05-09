@@ -77,7 +77,7 @@ namespace APS_5.Forms
             // textBox2
             // 
             this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox2.Location = new System.Drawing.Point(81, 122);
+            this.textBox2.Location = new System.Drawing.Point(83, 122);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(132, 26);
             this.textBox2.TabIndex = 3;
@@ -90,7 +90,7 @@ namespace APS_5.Forms
             this.label2.BackColor = System.Drawing.Color.Black;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
             this.label2.ForeColor = System.Drawing.SystemColors.ButtonShadow;
-            this.label2.Location = new System.Drawing.Point(98, 99);
+            this.label2.Location = new System.Drawing.Point(100, 97);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(99, 22);
             this.label2.TabIndex = 4;
