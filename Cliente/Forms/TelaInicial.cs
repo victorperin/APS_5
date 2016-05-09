@@ -68,6 +68,11 @@ namespace APS_5.Forms
         private void Form1_Load(object sender, System.EventArgs e)
         {
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            button2.BackColor = Color.Black;
+        }
          
     }
 }
