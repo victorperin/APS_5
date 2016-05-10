@@ -10,25 +10,29 @@ namespace APS_5.Code
         private const int PORTA = 3000;
         private string endereco;
         private TcpClient servidor;
+        private NetworkStream nwStream;
 
         public Connection(string enderecoTemp) {
                 endereco = enderecoTemp;
                 servidor = new TcpClient(endereco, PORTA);
-
+                nwStream = servidor.GetStream();
         }
 
         public dynamic SendData(dynamic data)
         {
-            NetworkStream nwStream = servidor.GetStream();
             string dataString = JsonConvert.SerializeObject(data);
-            byte[] bytesToSend = ASCIIEncoding.ASCII.GetBytes(dataString);
+            Byte[] bytesToSend = ASCIIEncoding.ASCII.GetBytes(dataString);
             nwStream.Write(bytesToSend, 0, bytesToSend.Length);
 
-            byte[] bytesToRead = new byte[servidor.ReceiveBufferSize];
+            byte[] bytesToRead = new Byte[servidor.ReceiveBufferSize];
+
+            String stringRead = String.Empty;
 
             int bytesRead = nwStream.Read(bytesToRead, 0, servidor.ReceiveBufferSize);
 
-            var stringRead = Encoding.ASCII.GetString(bytesToRead, 0, bytesRead);
+            
+            
+            stringRead = Encoding.ASCII.GetString(bytesToRead, 0, bytesRead);
             var objectRead = JsonConvert.DeserializeObject(stringRead);
 
             return objectRead;

@@ -9,6 +9,16 @@ namespace APS_5.Code
     static class ComunicacaoServidor
     {
         private static Connection conexao;
+
+        public static IList<string> ListarUsuariosOnline()
+        {
+            dynamic resposta = conexao.SendData(new { tipo = "obter-usuarios-online"});
+            if (resposta.status == "ok")
+                return resposta.data;
+            else
+                return null;
+        }
+
         public static bool EnviarMensagem(string mensagem)
         {
           //  Telas.telaChat

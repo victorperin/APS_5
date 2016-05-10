@@ -44,7 +44,10 @@ namespace APS_5.Forms
 
         private void EnviarBotao_Click(object sender, EventArgs e)
         {
-
+            foreach (var usuario in ComunicacaoServidor.ListarUsuariosOnline())
+            {
+                MessageBox.Show(usuario);
+            }
             if (ComunicacaoServidor.EnviarMensagem(BoxMensagemEnviar.Text))
             {
                 BoxMensagemEnviar.Clear();
@@ -54,6 +57,16 @@ namespace APS_5.Forms
             {
                 MessageBox.Show("Não foi possível enviar sua mensagem, verifique sua conexão", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
+
+        }
+
+        private void BoxMensagemEnviar_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BoxUsuariosSala_TextChanged(object sender, EventArgs e)
+        {
 
         }
 

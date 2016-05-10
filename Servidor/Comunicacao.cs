@@ -34,7 +34,7 @@ namespace Servidor
 
                 int bytesRead = nwStream.Read(bytesToRead, 0, client.ReceiveBufferSize);
                 Console.WriteLine("Received : " + Encoding.ASCII.GetString(bytesToRead, 0, bytesRead));
-                client.Close();
+                //client.Close();
             }
             catch (SocketException e)
             {
@@ -49,15 +49,11 @@ namespace Servidor
 
 
 
-        public static Request Listener()
+        public static Request Listener(TcpListener listener)
         {
             
             try
             {
-                //listen at the specified IP and port no.
-                IPAddress localAdd = IPAddress.Parse(GetLocalIPAddress());
-                TcpListener listener = new TcpListener(localAdd, PORT_NO);
-                listener.Start();
 
                 //incoming client connected
                 TcpClient client = listener.AcceptTcpClient();
@@ -93,7 +89,7 @@ namespace Servidor
 
             nwStream.Write(bytesToSend, 0, bytesToSend.Length);
         }
-        private static string GetLocalIPAddress()
+        public static string GetLocalIPAddress()
         {
             var host = Dns.GetHostEntry(Dns.GetHostName());
             foreach (var ip in host.AddressList)
