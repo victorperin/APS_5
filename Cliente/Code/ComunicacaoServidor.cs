@@ -37,6 +37,26 @@ namespace APS_5.Code
             
             }
          }
+         
+         
+         public static bool Desconectar (string nome, string servidor)
+         {
+         
+         
+         
+            try 
+            { 
+                
+                dynamic resposta = conexao.SendData (new { tipo = "desconectar"});
+                conexao.Disconnect();
+             }
+             
+             catch (Exception e) {
+             
+             
+                return false;
+             }
+           }
 
        // public static bool VerificarNovasMensagens(string)
         public static Mensagem ReceberMensagem()

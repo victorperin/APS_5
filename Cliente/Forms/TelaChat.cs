@@ -56,6 +56,14 @@ namespace APS_5.Forms
             }
 
         }
+        public void Close()
+        {
+        
+        ComunicacaoServidor.Desconectar();
+        
+        
+        
+        }
 
     }
 }
