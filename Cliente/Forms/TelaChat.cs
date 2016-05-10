@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using APS_5.Code.Helpers;
 
 namespace APS_5.Forms
 {
@@ -37,11 +38,12 @@ namespace APS_5.Forms
             while (true)
             {
                 string textoUsuariosOnline = "";
+                Thread.Sleep(100);
                 foreach (var usuario in ComunicacaoServidor.ListarUsuariosOnline())
                 {
                     textoUsuariosOnline += usuario + "\n";
                 }
-                BoxUsuariosSala.Text = textoUsuariosOnline;
+                ThreadHelperClass.SetText(this, BoxUsuariosSala, textoUsuariosOnline);
                 Thread.Sleep(3000);
             }
         }
@@ -70,6 +72,14 @@ namespace APS_5.Forms
                 MessageBox.Show("Não foi possível enviar sua mensagem, verifique sua conexão", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
 
+        }
+        public void Close()
+        {
+        
+        ComunicacaoServidor.Desconectar();
+        
+        
+        
         }
 
         private void BoxMensagemEnviar_TextChanged(object sender, EventArgs e)

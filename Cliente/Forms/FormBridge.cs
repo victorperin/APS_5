@@ -4,13 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using APS_5.Code;
 
 namespace APS_5.Forms
 {
     public class FormBridge : Form
     {
         private bool continuarExecucao = false;
-        protected void Close(bool continuarExecucaoTemp)
+        protected void Close(bool continuarExecucaoTemp = false)
         {
             continuarExecucao = continuarExecucaoTemp;
             base.Close();
@@ -19,8 +20,10 @@ namespace APS_5.Forms
         {
             base.OnFormClosing(e);
 
-            if (!continuarExecucao)
-                Application.Exit();
+            if (continuarExecucao) return;
+
+            ComunicacaoServidor.Desconectar();
+            Application.Exit();
         }
     }
 }

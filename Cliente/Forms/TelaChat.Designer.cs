@@ -1,4 +1,6 @@
-﻿namespace APS_5.Forms
+﻿using APS_5.Code;
+
+namespace APS_5.Forms
 {
     partial class TelaChat
     {
