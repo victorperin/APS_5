@@ -34,7 +34,7 @@ namespace Servidor
 
                 int bytesRead = nwStream.Read(bytesToRead, 0, client.ReceiveBufferSize);
                 Console.WriteLine("Received : " + Encoding.ASCII.GetString(bytesToRead, 0, bytesRead));
-                client.Close();
+                //client.Close();
             }
             catch (SocketException e)
             {
@@ -49,15 +49,11 @@ namespace Servidor
 
 
 
-        public static Request Listener()
+        public static Request Listener(TcpListener listener)
         {
             
-            try
-            {
-                //listen at the specified IP and port no.
-                IPAddress localAdd = IPAddress.Parse(GetLocalIPAddress());
-                TcpListener listener = new TcpListener(localAdd, PORT_NO);
-                listener.Start();
+            //try
+            //{
 
                 //incoming client connected
                 TcpClient client = listener.AcceptTcpClient();
@@ -75,25 +71,23 @@ namespace Servidor
 
                 //write back the text to the client
                 //nwStream.Write(buffer, 0, bytesRead);
-                //client.Close();
-                listener.Stop();
 
                 return new Request { Client = client, Stream = nwStream, Data = JsonConvert.DeserializeObject(dataReceived) };
-            }catch(Exception e){
-                return null;
-            }
+            //}catch(Exception e){
+            //    return new Request { Client = null, Stream = null, Data = null };
+            //}
 
             
         }
         public static void SendResponse(Request request, dynamic data)
         {
-            NetworkStream nwStream = request.Client.GetStream();
+            NetworkStream nwStream = request.Stream;
             string stringToSend = JsonConvert.SerializeObject(data);
-            byte[] bytesToSend = ASCIIEncoding.ASCII.GetBytes(stringToSend);
+            byte[] bytesToSend = Encoding.ASCII.GetBytes(stringToSend);
 
             nwStream.Write(bytesToSend, 0, bytesToSend.Length);
         }
-        private static string GetLocalIPAddress()
+        public static string GetLocalIpAddress()
         {
             var host = Dns.GetHostEntry(Dns.GetHostName());
             foreach (var ip in host.AddressList)
@@ -107,7 +101,7 @@ namespace Servidor
         }
         public static string getAddress()
         {
-            return GetLocalIPAddress()+":"+PORT_NO;
+            return GetLocalIpAddress()+":"+PORT_NO;
         }
     }
 }

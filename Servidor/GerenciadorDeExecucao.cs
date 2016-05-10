@@ -18,32 +18,25 @@ namespace Servidor
             {
                 usuarios.Add(conexao.NomeUsuario);
             }
-            return usuarios;
+            return usuarios.Distinct().ToList();
         }
-        public static void Gerenciar(Request request) {
-            try
+        public static void Gerenciar(Request request)
+        {
+            if (request.Data == null) return;
+            switch ((string)request.Data.tipo)
             {
-                switch ((string)request.Data.tipo)
-                {
-                    case "definir-nome":
-                        Console.WriteLine("Usuario "+request.Data.nome+" conectou.");
-                        request.NomeUsuario = request.Data.nome;
-                        conexoes.Add(request);
-                        Comunicacao.SendResponse(request, new { status="ok" });
-                        break;
+                case "definir-nome":
+                    Console.WriteLine("Usuario " + request.Data.nome + " conectou.");
+                    request.NomeUsuario = request.Data.nome;
+                    conexoes.Add(request);
+                    Comunicacao.SendResponse(request, new { status = "ok" });
+                    break;
 
-                    case "obter-usuarios-online":
-                        Comunicacao.SendResponse(request, UsuariosOnline());
-                        break;
-                    default:
-                        break;
-                }
+                case "obter-usuarios-online":
+                    Console.WriteLine("Enviando lista de usuarios:\n" + UsuariosOnline().ToString());
+                    Comunicacao.SendResponse(request, new { status = "ok", data = UsuariosOnline() });
+                    break;
             }
-            catch (Exception e)
-            {
-                Console.WriteLine("Erro ao gerenciar execução");
-            }
-            
         }
     }
 }

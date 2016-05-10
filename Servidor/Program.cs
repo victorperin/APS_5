@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using Servidor.Model;
+using System.Net;
 
 namespace Servidor
 {
@@ -19,10 +20,12 @@ namespace Servidor
 
         static void RepeaterListener()
         {
-            Console.WriteLine("Listening on: " + Comunicacao.getAddress());
+            IPAddress localAdd = IPAddress.Parse(Comunicacao.GetLocalIpAddress());
+            TcpListener listener = new TcpListener(localAdd, 3000);
+            listener.Start();
             while (true)
             {
-                GerenciadorDeExecucao.Gerenciar(Comunicacao.Listener());
+                GerenciadorDeExecucao.Gerenciar(Comunicacao.Listener(listener));
             }
                 
         }
