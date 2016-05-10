@@ -12,6 +12,7 @@ namespace APS_5.Code
     {
         private static Connection conexao;
         private static string servidor;
+        private static string usuario;
 
         public static IList<string> ListarUsuariosOnline()
         {
@@ -36,6 +37,7 @@ namespace APS_5.Code
             try
             {
                 servidor = servidorTemp;
+                usuario = nome;
                 conexao = new Connection(servidor);
                 dynamic resposta = conexao.SendData(new { tipo = "definir-nome", nome = nome});
                 if (resposta.status == "ok")
@@ -52,26 +54,19 @@ namespace APS_5.Code
             }
          }
          
-         
-         public static bool Desconectar ()
-         {
-         
-         
-         
-            try 
-            { 
-                
-                dynamic resposta = conexao.SendData (new { tipo = "desconectar"});
-                conexao.Disconnect();
+        public static bool Desconectar ()
+        {
+            try
+            {
+                conexao = new Connection(servidor);
+                dynamic resposta = conexao.SendData (new { tipo = "desconectar", usuario = usuario});
+                //conexao.Disconnect();
                 return true;
             }
-             
-             catch (Exception e) {
-             
-             
+            catch (Exception e) {
                 return false;
-             }
-           }
+            }
+        }
 
        // public static bool VerificarNovasMensagens(string)
         public static Mensagem ReceberMensagem()

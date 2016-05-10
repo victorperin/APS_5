@@ -72,7 +72,7 @@ namespace Servidor
                 //write back the text to the client
                 //nwStream.Write(buffer, 0, bytesRead);
 
-                return new Request { Client = client, Stream = nwStream, Data = JsonConvert.DeserializeObject(dataReceived) };
+                return new Request { Client = client, Stream = nwStream, Data = JsonConvert.DeserializeObject(dataReceived), DataAtualizacao = DateTime.Now};
             //}catch(Exception e){
             //    return new Request { Client = null, Stream = null, Data = null };
             //}

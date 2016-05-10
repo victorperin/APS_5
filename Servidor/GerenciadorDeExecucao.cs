@@ -20,6 +20,11 @@ namespace Servidor
             }
             return usuarios.Distinct().ToList();
         }
+
+        private static void RemoverUsuario(string nome)
+        {
+            conexoes = conexoes.Where(x => x.NomeUsuario != nome).ToList();
+        }
         public static void Gerenciar(Request request)
         {
             if (request.Data == null) return;
@@ -32,12 +37,14 @@ namespace Servidor
                     Comunicacao.SendResponse(request, new { status = "ok" });
                     break;
                 case "obter-usuarios-online":
-                    Console.WriteLine("Enviando lista de usuarios");
+                    Console.WriteLine("Enviando lista de usuarios.");
                     Comunicacao.SendResponse(request, new { status = "ok", data = UsuariosOnline() });
                     break;
 
                 case "desconectar":
-                    Console.WriteLine("Usuario desconectou");
+                    Comunicacao.SendResponse(request, new { status = "ok" });
+                    RemoverUsuario((string)request.Data.usuario);
+                    Console.WriteLine("Usuario " + request.Data.usuario + " desconectou.");
                     break;
                 
             }
