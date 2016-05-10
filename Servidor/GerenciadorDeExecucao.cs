@@ -35,6 +35,10 @@ namespace Servidor
                     case "obter-usuarios-online":
                         Comunicacao.SendResponse(request, UsuariosOnline());
                         break;
+
+                    case "desconectar":
+                        Console.WriteLine("Usuario desconectou");
+                        break;
                     default:
                         break;
                 }

@@ -39,7 +39,7 @@ namespace APS_5.Code
          }
          
          
-         public static bool Desconectar (string nome, string servidor)
+         public static bool Desconectar ()
          {
          
          
@@ -49,7 +49,8 @@ namespace APS_5.Code
                 
                 dynamic resposta = conexao.SendData (new { tipo = "desconectar"});
                 conexao.Disconnect();
-             }
+                return true;
+            }
              
              catch (Exception e) {
              
