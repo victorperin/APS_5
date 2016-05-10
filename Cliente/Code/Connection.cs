@@ -20,6 +20,7 @@ namespace APS_5.Code
 
         public dynamic SendData(dynamic data)
         {
+
             string dataString = JsonConvert.SerializeObject(data);
             Byte[] bytesToSend = ASCIIEncoding.ASCII.GetBytes(dataString);
             nwStream.Write(bytesToSend, 0, bytesToSend.Length);

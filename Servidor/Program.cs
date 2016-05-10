@@ -20,7 +20,7 @@ namespace Servidor
 
         static void RepeaterListener()
         {
-            IPAddress localAdd = IPAddress.Parse(Comunicacao.GetLocalIPAddress());
+            IPAddress localAdd = IPAddress.Parse(Comunicacao.GetLocalIpAddress());
             TcpListener listener = new TcpListener(localAdd, 3000);
             listener.Start();
             while (true)

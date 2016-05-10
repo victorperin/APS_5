@@ -6,6 +6,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -31,9 +32,24 @@ namespace APS_5.Forms
             
         }
 
+        private void AtualizarUsuarios()
+        {
+            while (true)
+            {
+                string textoUsuariosOnline = "";
+                foreach (var usuario in ComunicacaoServidor.ListarUsuariosOnline())
+                {
+                    textoUsuariosOnline += usuario + "\n";
+                }
+                BoxUsuariosSala.Text = textoUsuariosOnline;
+                Thread.Sleep(3000);
+            }
+        }
+
         private void TelaChat_Load(object sender, EventArgs e)
         {
-
+            Thread thread = new Thread(new ThreadStart(AtualizarUsuarios));
+            thread.Start();
         }
 
         private void button1_Click_1(object sender, EventArgs e)
@@ -44,10 +60,6 @@ namespace APS_5.Forms
 
         private void EnviarBotao_Click(object sender, EventArgs e)
         {
-            foreach (var usuario in ComunicacaoServidor.ListarUsuariosOnline())
-            {
-                MessageBox.Show(usuario);
-            }
             if (ComunicacaoServidor.EnviarMensagem(BoxMensagemEnviar.Text))
             {
                 BoxMensagemEnviar.Clear();

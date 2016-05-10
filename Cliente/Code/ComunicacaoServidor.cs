@@ -3,20 +3,23 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 
 namespace APS_5.Code
 {
     static class ComunicacaoServidor
     {
         private static Connection conexao;
+        private static string servidor;
 
         public static IList<string> ListarUsuariosOnline()
         {
+            conexao = new Connection(servidor);
             dynamic resposta = conexao.SendData(new { tipo = "obter-usuarios-online"});
-            if (resposta.status == "ok")
-                return resposta.data;
-            else
-                return null;
+            if (resposta.status != "ok") return null;
+
+            return resposta.data.ToObject<List<string>>();
         }
 
         public static bool EnviarMensagem(string mensagem)
@@ -25,13 +28,14 @@ namespace APS_5.Code
             return true;
         }
 
-        public static bool Conectar(string nome, string servidor)
+        public static bool Conectar(string nome, string servidorTemp)
         {
 
 
 
             try
             {
+                servidor = servidorTemp;
                 conexao = new Connection(servidor);
                 dynamic resposta = conexao.SendData(new { tipo = "definir-nome", nome = nome});
                 if (resposta.status == "ok")
