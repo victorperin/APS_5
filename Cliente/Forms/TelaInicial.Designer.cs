@@ -74,6 +74,7 @@ namespace APS_5.Forms
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(104, 110);
             this.button1.TabIndex = 0;
+            this.toolTip1.SetToolTip(this.button1, "Conectar");
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -110,7 +111,7 @@ namespace APS_5.Forms
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(32, 32);
             this.button2.TabIndex = 5;
-            this.toolTip1.SetToolTip(this.button2, "Não são permitidos nomes com caracteres especiais ou espaço");
+            this.toolTip1.SetToolTip(this.button2, "Ajuda");
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 

@@ -31,6 +31,7 @@ namespace APS_5.Forms
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TelaChat));
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -39,6 +40,7 @@ namespace APS_5.Forms
             this.BoxUsuariosSala = new System.Windows.Forms.RichTextBox();
             this.BoxMensagemEnviar = new System.Windows.Forms.RichTextBox();
             this.BoxMensagens = new System.Windows.Forms.RichTextBox();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.SuspendLayout();
             // 
             // label2
@@ -76,6 +78,7 @@ namespace APS_5.Forms
             this.EnviarBotao.Name = "EnviarBotao";
             this.EnviarBotao.Size = new System.Drawing.Size(32, 32);
             this.EnviarBotao.TabIndex = 5;
+            this.toolTip1.SetToolTip(this.EnviarBotao, "Enviar");
             this.EnviarBotao.UseCompatibleTextRendering = true;
             this.EnviarBotao.UseVisualStyleBackColor = false;
             this.EnviarBotao.Click += new System.EventHandler(this.EnviarBotao_Click);
@@ -93,6 +96,7 @@ namespace APS_5.Forms
             this.BotaoConfigChat.Name = "BotaoConfigChat";
             this.BotaoConfigChat.Size = new System.Drawing.Size(32, 32);
             this.BotaoConfigChat.TabIndex = 4;
+            this.toolTip1.SetToolTip(this.BotaoConfigChat, "Configuração/Sair");
             this.BotaoConfigChat.UseVisualStyleBackColor = false;
             this.BotaoConfigChat.Click += new System.EventHandler(this.button1_Click_1);
             // 
@@ -172,6 +176,7 @@ namespace APS_5.Forms
         private System.Windows.Forms.Button BotaoConfigChat;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ToolTip toolTip1;
 
 
     }
