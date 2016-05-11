@@ -10,6 +10,7 @@ namespace Servidor
     static class GerenciadorDeExecucao
     {
         private static IList<Request> conexoes = new List<Request>();
+        private static IList<Mensagem> mensagens = new List<Mensagem>();
 
         private static IList<string> UsuariosOnline()
         {
@@ -46,7 +47,15 @@ namespace Servidor
                     RemoverUsuario((string)request.Data.usuario);
                     Console.WriteLine("Usuario " + request.Data.usuario + " desconectou.");
                     break;
-                
+                case "obter-mensagens":
+                    Console.WriteLine(mensagens.Count);
+                    Comunicacao.SendResponse(request, mensagens);
+                    break;
+                case "enviar-mensagem":
+                    mensagens.Add(new Mensagem { usuario = request.Data.usuario, mensagem = request.Data.mensagem });
+                    Comunicacao.SendResponse(request, new { status = "ok" });
+                    Console.WriteLine(request.Data.usuario + " disse: " + request.Data.mensagem);
+                    break;
             }
         }
     }

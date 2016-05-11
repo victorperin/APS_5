@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using System.Windows.Forms;
 
 namespace APS_5.Code
 {
@@ -23,9 +24,18 @@ namespace APS_5.Code
             return resposta.data.ToObject<List<string>>();
         }
 
+        public static IList<Mensagem> ListarMensagens()
+        {
+            conexao = new Connection(servidor);
+            dynamic resposta = conexao.SendData(new { tipo = "obter-mensagens" });
+            return resposta.ToObject<List<Mensagem>>();
+        }
+
         public static bool EnviarMensagem(string mensagem)
         {
-          //  Telas.telaChat
+            conexao = new Connection(servidor);
+            dynamic resposta = conexao.SendData(new { tipo = "enviar-mensagem", usuario = usuario, mensagem = mensagem });
+            if (resposta.status != "ok") return false;
             return true;
         }
 
@@ -73,9 +83,8 @@ namespace APS_5.Code
         {
             return new Mensagem
             {
-                NomeUsuario = "Victor",
-                IpUsuario = "0.0.0.0",
-                Texto = "Blablabla"
+                usuario = "Victor",
+                mensagem = "Blablabla"
             };
         }
     }
