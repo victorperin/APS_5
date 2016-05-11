@@ -106,6 +106,14 @@ namespace APS_5.Forms
         {
 
         }
+        private void BoxMensagemEnviar_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                EnviarBotao_Click(this, new EventArgs());
+                e.SuppressKeyPress = true;
+            }
+        }
         private void Form1_Click(object sender, KeyEventArgs e)
         {
           

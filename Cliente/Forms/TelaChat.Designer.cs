@@ -118,6 +118,7 @@ namespace APS_5.Forms
             this.BoxMensagemEnviar.TabIndex = 2;
             this.BoxMensagemEnviar.Text = "";
             this.BoxMensagemEnviar.TextChanged += new System.EventHandler(this.BoxMensagemEnviar_TextChanged);
+            this.BoxMensagemEnviar.KeyDown += new System.Windows.Forms.KeyEventHandler(this.BoxMensagemEnviar_KeyDown);
             // 
             // BoxMensagens
             // 
