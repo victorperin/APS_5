@@ -16,5 +16,10 @@ namespace APS_5.Forms
         {
             InitializeComponent();
         }
+
+        private void TelaCreditos_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

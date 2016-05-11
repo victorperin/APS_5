@@ -56,6 +56,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "TelaCreditos";
             this.Text = "Pruu";
+            this.Load += new System.EventHandler(this.TelaCreditos_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

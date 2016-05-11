@@ -35,7 +35,9 @@ namespace APS_5.Forms
             {
                 Telas.telaChat = new TelaChat();
                 Telas.telaChat.Show();
+                Telas.telaCreditos.Close();
                 Telas.telaInicial.Close(true);
+                
             }
             else {
                 MessageBox.Show("Nome ou IP inválido", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
