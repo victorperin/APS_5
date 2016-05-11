@@ -33,8 +33,7 @@ namespace APS_5.Forms
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TelaChat));
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.labelUsuariosOnline = new System.Windows.Forms.Label();
             this.EnviarBotao = new System.Windows.Forms.Button();
             this.BotaoConfigChat = new System.Windows.Forms.Button();
             this.BoxUsuariosSala = new System.Windows.Forms.RichTextBox();
@@ -43,26 +42,18 @@ namespace APS_5.Forms
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.SuspendLayout();
             // 
-            // label2
+            // labelUsuariosOnline
             // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Black;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.label2.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label2.Location = new System.Drawing.Point(566, 9);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(144, 22);
-            this.label2.TabIndex = 7;
-            this.label2.Text = "Usuários na sala";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(566, 14);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(51, 20);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "label1";
+            this.labelUsuariosOnline.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelUsuariosOnline.AutoSize = true;
+            this.labelUsuariosOnline.BackColor = System.Drawing.Color.Black;
+            this.labelUsuariosOnline.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.labelUsuariosOnline.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.labelUsuariosOnline.Location = new System.Drawing.Point(566, 9);
+            this.labelUsuariosOnline.Name = "labelUsuariosOnline";
+            this.labelUsuariosOnline.Size = new System.Drawing.Size(144, 22);
+            this.labelUsuariosOnline.TabIndex = 7;
+            this.labelUsuariosOnline.Text = "Usuários na sala";
             // 
             // EnviarBotao
             // 
@@ -150,8 +141,7 @@ namespace APS_5.Forms
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(723, 398);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.labelUsuariosOnline);
             this.Controls.Add(this.EnviarBotao);
             this.Controls.Add(this.BotaoConfigChat);
             this.Controls.Add(this.BoxUsuariosSala);
@@ -174,8 +164,7 @@ namespace APS_5.Forms
         private System.Windows.Forms.RichTextBox BoxUsuariosSala;
         private System.Windows.Forms.Button EnviarBotao;
         private System.Windows.Forms.Button BotaoConfigChat;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label labelUsuariosOnline;
         private System.Windows.Forms.ToolTip toolTip1;
 
 
