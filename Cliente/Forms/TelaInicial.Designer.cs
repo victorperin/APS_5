@@ -58,7 +58,7 @@ namespace APS_5.Forms
             // textBox1
             // 
             this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox1.Location = new System.Drawing.Point(39, 51);
+            this.textBox1.Location = new System.Drawing.Point(37, 51);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(217, 26);
             this.textBox1.TabIndex = 1;
@@ -71,9 +71,9 @@ namespace APS_5.Forms
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(95, 167);
+            this.button1.Location = new System.Drawing.Point(104, 174);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(104, 110);
+            this.button1.Size = new System.Drawing.Size(82, 76);
             this.button1.TabIndex = 0;
             this.toolTip1.SetToolTip(this.button1, "Conectar");
             this.button1.UseVisualStyleBackColor = false;
@@ -82,7 +82,7 @@ namespace APS_5.Forms
             // textBox2
             // 
             this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox2.Location = new System.Drawing.Point(83, 122);
+            this.textBox2.Location = new System.Drawing.Point(79, 122);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(132, 26);
             this.textBox2.TabIndex = 3;
