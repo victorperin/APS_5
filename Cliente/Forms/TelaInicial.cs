@@ -14,19 +14,17 @@ namespace APS_5.Forms
 {
     public partial class TelaInicial : FormBridge
     {
-        
         public TelaInicial()
         {
             InitializeComponent();
         }
 
-        public void  button1_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
             var NomeUsuario = textBox1.Text;
             var IPServidor = textBox2.Text;
             string AntiBug = @"(\s+|^$)";
             if (System.Text.RegularExpressions.Regex.IsMatch(NomeUsuario, AntiBug))
-           
             {
                 MessageBox.Show("Nome Inválido, não é permitido o uso de espaço.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
@@ -35,9 +33,7 @@ namespace APS_5.Forms
             {
                 Telas.telaChat = new TelaChat();
                 Telas.telaChat.Show();
-                Telas.telaCreditos.Close();
                 Telas.telaInicial.Close(true);
-                
             }
             else {
                 MessageBox.Show("Nome ou IP inválido", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);

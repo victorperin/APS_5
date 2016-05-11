@@ -44,7 +44,7 @@
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(211, 79);
             this.textBox1.TabIndex = 1;
-            this.textBox1.Text = "Victor Perin - C27III-7\r\nMatheus Luz - C1116A-8\r\nRafael Bella - C3341A0";
+            this.textBox1.Text = "Victor Perin - C27III-7\r\nMatheus Luz - C1116A-8\r\nRafael Bella - ~~  ";
             // 
             // TelaCreditos
             // 
@@ -55,8 +55,7 @@
             this.Controls.Add(this.textBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "TelaCreditos";
-            this.Text = "Pruu";
-            this.Load += new System.EventHandler(this.TelaCreditos_Load);
+            this.Text = "TelaCreditos";
             this.ResumeLayout(false);
             this.PerformLayout();
 
