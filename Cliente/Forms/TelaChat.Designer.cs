@@ -125,15 +125,15 @@ namespace APS_5.Forms
             this.BoxMensagens.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.BoxMensagens.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(38)))));
+            this.BoxMensagens.BackColor = System.Drawing.Color.White;
             this.BoxMensagens.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.BoxMensagens.Enabled = false;
             this.BoxMensagens.Location = new System.Drawing.Point(12, 12);
             this.BoxMensagens.Name = "BoxMensagens";
             this.BoxMensagens.ReadOnly = true;
             this.BoxMensagens.Size = new System.Drawing.Size(548, 282);
             this.BoxMensagens.TabIndex = 1;
             this.BoxMensagens.Text = "";
+            this.BoxMensagens.SelectionChanged += new System.EventHandler(this.BoxMensagens_SelectionChanged);
             this.BoxMensagens.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged);
             // 
             // TelaChat
