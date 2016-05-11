@@ -73,6 +73,12 @@
     <Compile Include="Forms\TelaConfig.Designer.cs">
       <DependentUpon>TelaConfig.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\TelaCreditos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\TelaCreditos.Designer.cs">
+      <DependentUpon>TelaCreditos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\TelaInicial.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -86,6 +92,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\TelaConfig.resx">
       <DependentUpon>TelaConfig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\TelaCreditos.resx">
+      <DependentUpon>TelaCreditos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\TelaInicial.resx">
       <DependentUpon>TelaInicial.cs</DependentUpon>

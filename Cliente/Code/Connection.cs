@@ -22,7 +22,7 @@ namespace APS_5.Code
         {
 
             string dataString = JsonConvert.SerializeObject(data);
-            Byte[] bytesToSend = ASCIIEncoding.ASCII.GetBytes(dataString);
+            Byte[] bytesToSend = UTF8Encoding.UTF8.GetBytes(dataString);
             nwStream.Write(bytesToSend, 0, bytesToSend.Length);
 
             byte[] bytesToRead = new Byte[servidor.ReceiveBufferSize];
@@ -31,9 +31,9 @@ namespace APS_5.Code
 
             int bytesRead = nwStream.Read(bytesToRead, 0, servidor.ReceiveBufferSize);
 
-            
-            
-            stringRead = Encoding.ASCII.GetString(bytesToRead, 0, bytesRead);
+
+
+            stringRead = Encoding.UTF8.GetString(bytesToRead, 0, bytesRead);
             var objectRead = JsonConvert.DeserializeObject(stringRead);
 
             return objectRead;

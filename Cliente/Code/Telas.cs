@@ -9,11 +9,9 @@ namespace APS_5.Code
 {
     public static class Telas
     {
-        public static TelaInicial telaInicial;
+        public static TelaInicial telaInicial;  
         public static TelaChat telaChat;
-        public static TelaChat telaMenu;
-        public static TelaChat telaOnline;
         public static TelaConfig telaConfig;
-
+        public static TelaCreditos telaCreditos;
     }
 }

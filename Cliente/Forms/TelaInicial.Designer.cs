@@ -39,6 +39,7 @@ namespace APS_5.Forms
             this.label2 = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.button2 = new System.Windows.Forms.Button();
+            this.BotaoCreditos = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -57,11 +58,12 @@ namespace APS_5.Forms
             // textBox1
             // 
             this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox1.Location = new System.Drawing.Point(39, 51);
+            this.textBox1.Location = new System.Drawing.Point(37, 51);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(217, 26);
             this.textBox1.TabIndex = 1;
             this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.textBox1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox1_KeyDown);
             // 
             // button1
             // 
@@ -70,23 +72,25 @@ namespace APS_5.Forms
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(95, 167);
+            this.button1.Location = new System.Drawing.Point(104, 174);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(104, 110);
+            this.button1.Size = new System.Drawing.Size(82, 76);
             this.button1.TabIndex = 0;
+            this.toolTip1.SetToolTip(this.button1, "Conectar");
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // textBox2
             // 
             this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox2.Location = new System.Drawing.Point(83, 122);
+            this.textBox2.Location = new System.Drawing.Point(79, 122);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(132, 26);
             this.textBox2.TabIndex = 3;
             this.textBox2.Text = "127.0.0.1";
             this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            this.textBox2.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox1_KeyDown);
             // 
             // label2
             // 
@@ -110,9 +114,21 @@ namespace APS_5.Forms
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(32, 32);
             this.button2.TabIndex = 5;
-            this.toolTip1.SetToolTip(this.button2, "Não são permitidos nomes com caracteres especiais ou espaço");
+            this.toolTip1.SetToolTip(this.button2, "Ajuda");
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // BotaoCreditos
+            // 
+            this.BotaoCreditos.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BotaoCreditos.BackgroundImage")));
+            this.BotaoCreditos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.BotaoCreditos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BotaoCreditos.Location = new System.Drawing.Point(12, 279);
+            this.BotaoCreditos.Name = "BotaoCreditos";
+            this.BotaoCreditos.Size = new System.Drawing.Size(45, 32);
+            this.BotaoCreditos.TabIndex = 6;
+            this.BotaoCreditos.UseVisualStyleBackColor = true;
+            this.BotaoCreditos.Click += new System.EventHandler(this.button3_Click);
             // 
             // TelaInicial
             // 
@@ -121,6 +137,7 @@ namespace APS_5.Forms
             this.BackColor = System.Drawing.Color.Black;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(278, 323);
+            this.Controls.Add(this.BotaoCreditos);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.textBox2);
@@ -133,7 +150,7 @@ namespace APS_5.Forms
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "TelaInicial";
-            this.Text = "Chat Daora";
+            this.Text = "Pruu";
             this.Load += new System.EventHandler(this.TelaInicial_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -149,6 +166,7 @@ namespace APS_5.Forms
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button BotaoCreditos;
     }
 }
 
