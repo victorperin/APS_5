@@ -39,6 +39,7 @@ namespace APS_5.Forms
             this.label2 = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.button2 = new System.Windows.Forms.Button();
+            this.BotaoCreditos = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -115,6 +116,18 @@ namespace APS_5.Forms
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // BotaoCreditos
+            // 
+            this.BotaoCreditos.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BotaoCreditos.BackgroundImage")));
+            this.BotaoCreditos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.BotaoCreditos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BotaoCreditos.Location = new System.Drawing.Point(12, 279);
+            this.BotaoCreditos.Name = "BotaoCreditos";
+            this.BotaoCreditos.Size = new System.Drawing.Size(45, 32);
+            this.BotaoCreditos.TabIndex = 6;
+            this.BotaoCreditos.UseVisualStyleBackColor = true;
+            this.BotaoCreditos.Click += new System.EventHandler(this.button3_Click);
+            // 
             // TelaInicial
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -122,6 +135,7 @@ namespace APS_5.Forms
             this.BackColor = System.Drawing.Color.Black;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(278, 323);
+            this.Controls.Add(this.BotaoCreditos);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.textBox2);
@@ -150,6 +164,7 @@ namespace APS_5.Forms
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button BotaoCreditos;
     }
 }
 

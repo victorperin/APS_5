@@ -74,6 +74,12 @@ namespace APS_5.Forms
            // button2.BackColor = Color.Black;
             MessageBox.Show("-Não é pemitido o uso de espaço nos nomes \n-Utilize IPV4", "Ajuda", MessageBoxButtons.OK, MessageBoxIcon.Question);
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Telas.telaCreditos = new TelaCreditos();
+            Telas.telaCreditos.Show();
+        }
          
     }
 }
