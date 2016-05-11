@@ -23,7 +23,7 @@ namespace Servidor
                 TcpClient client = requestToSend.Client;
                 NetworkStream nwStream = client.GetStream();
 
-                byte[] bytesToSend = ASCIIEncoding.ASCII.GetBytes(textToSend);
+                byte[] bytesToSend = UTF8Encoding.UTF8.GetBytes(textToSend);
 
                 //---send the text---
                 Console.WriteLine("Sending : " + textToSend);
@@ -33,7 +33,7 @@ namespace Servidor
                 byte[] bytesToRead = new byte[client.ReceiveBufferSize];
 
                 int bytesRead = nwStream.Read(bytesToRead, 0, client.ReceiveBufferSize);
-                Console.WriteLine("Received : " + Encoding.ASCII.GetString(bytesToRead, 0, bytesRead));
+                Console.WriteLine("Received : " + Encoding.UTF8.GetString(bytesToRead, 0, bytesRead));
                 //client.Close();
             }
             catch (SocketException e)
@@ -66,7 +66,7 @@ namespace Servidor
                 int bytesRead = nwStream.Read(buffer, 0, client.ReceiveBufferSize);
 
                 //convert the data received into a json and return as a Request
-                string dataReceived = Encoding.ASCII.GetString(buffer, 0, bytesRead);
+                string dataReceived = Encoding.UTF8.GetString(buffer, 0, bytesRead);
                 
 
                 //write back the text to the client
@@ -83,7 +83,7 @@ namespace Servidor
         {
             NetworkStream nwStream = request.Stream;
             string stringToSend = JsonConvert.SerializeObject(data);
-            byte[] bytesToSend = Encoding.ASCII.GetBytes(stringToSend);
+            byte[] bytesToSend = Encoding.UTF8.GetBytes(stringToSend);
 
             nwStream.Write(bytesToSend, 0, bytesToSend.Length);
         }
