@@ -133,7 +133,6 @@ namespace APS_5.Forms
             this.BoxMensagens.Size = new System.Drawing.Size(548, 282);
             this.BoxMensagens.TabIndex = 1;
             this.BoxMensagens.Text = "";
-            this.BoxMensagens.SelectionChanged += new System.EventHandler(this.BoxMensagens_SelectionChanged);
             this.BoxMensagens.TextChanged += new System.EventHandler(this.richTextBox1_TextChanged);
             // 
             // TelaChat
