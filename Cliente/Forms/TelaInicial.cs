@@ -38,24 +38,31 @@ namespace APS_5.Forms
             else {
                 MessageBox.Show("Nome ou IP inválido", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
+         
+
         }
         private void Form1_Click(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.Enter)
-            {
-                this.button1.PerformClick();
-            }
+
         }
 
 
         private void TelaInicial_Load(object sender, EventArgs e)
         {
-
+         
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void textBox1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                button1_Click(this, new EventArgs());
+            }
         }
 
         private void label1_Click(object sender, EventArgs e)

@@ -99,13 +99,17 @@ namespace APS_5.Forms
 
         private void BoxMensagemEnviar_TextChanged(object sender, EventArgs e)
         {
-
+         
         }
 
         private void BoxUsuariosSala_TextChanged(object sender, EventArgs e)
         {
 
         }
-
+        private void Form1_Click(object sender, KeyEventArgs e)
+        {
+          
+        }
+    
     }
 }
