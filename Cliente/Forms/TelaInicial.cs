@@ -71,7 +71,8 @@ namespace APS_5.Forms
 
         private void button2_Click(object sender, EventArgs e)
         {
-            button2.BackColor = Color.Black;
+           // button2.BackColor = Color.Black;
+            MessageBox.Show("-Não é pemitido o uso de espaço nos nomes \n-Utilize IPV4", "Ajuda", MessageBoxButtons.OK, MessageBoxIcon.Question);
         }
          
     }

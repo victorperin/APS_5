@@ -33,9 +33,9 @@
             // 
             // BotaoVoltar
             // 
-            this.BotaoVoltar.Location = new System.Drawing.Point(98, 94);
+            this.BotaoVoltar.Location = new System.Drawing.Point(332, 198);
             this.BotaoVoltar.Name = "BotaoVoltar";
-            this.BotaoVoltar.Size = new System.Drawing.Size(75, 23);
+            this.BotaoVoltar.Size = new System.Drawing.Size(112, 34);
             this.BotaoVoltar.TabIndex = 0;
             this.BotaoVoltar.Text = "BotaoVoltar";
             this.BotaoVoltar.UseVisualStyleBackColor = true;
@@ -44,7 +44,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(278, 244);
+            this.ClientSize = new System.Drawing.Size(456, 244);
             this.Controls.Add(this.BotaoVoltar);
             this.Name = "TelaConfig";
             this.Text = "TelaConfig";

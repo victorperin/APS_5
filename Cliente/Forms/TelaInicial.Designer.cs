@@ -133,7 +133,7 @@ namespace APS_5.Forms
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "TelaInicial";
-            this.Text = "Chat Daora";
+            this.Text = "Pruu";
             this.Load += new System.EventHandler(this.TelaInicial_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
