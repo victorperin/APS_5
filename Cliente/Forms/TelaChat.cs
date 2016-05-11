@@ -47,11 +47,26 @@ namespace APS_5.Forms
                 Thread.Sleep(3000);
             }
         }
+        private void AtualizarMensagens()
+        {
+            while (true)
+            {
+                string mensagens = "";
+                foreach (var mensagem in ComunicacaoServidor.ListarMensagens())
+                {
+                    mensagens += mensagem.usuario + ": " + mensagem.mensagem + "\n";
+                }
+                ThreadHelperClass.SetText(this, BoxMensagens, mensagens);
+                Thread.Sleep(1000);
+            }
+        }
 
         private void TelaChat_Load(object sender, EventArgs e)
         {
-            Thread thread = new Thread(new ThreadStart(AtualizarUsuarios));
-            thread.Start();
+            Thread usuariosThread = new Thread(new ThreadStart(AtualizarUsuarios));
+            usuariosThread.Start();
+            Thread mensagensThread = new Thread(new ThreadStart(AtualizarMensagens));
+            mensagensThread.Start();
         }
 
         private void button1_Click_1(object sender, EventArgs e)
