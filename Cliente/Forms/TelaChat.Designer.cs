@@ -89,6 +89,7 @@ namespace APS_5.Forms
             this.BotaoConfigChat.TabIndex = 4;
             this.toolTip1.SetToolTip(this.BotaoConfigChat, "Configuração/Sair");
             this.BotaoConfigChat.UseVisualStyleBackColor = false;
+            this.BotaoConfigChat.Visible = false;
             this.BotaoConfigChat.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // BoxUsuariosSala
