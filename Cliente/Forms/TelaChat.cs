@@ -30,7 +30,8 @@ namespace APS_5.Forms
 
         private void richTextBox1_TextChanged(object sender, EventArgs e)
         {
-            
+            BoxMensagens.SelectionStart = BoxMensagens.Text.Length;
+            BoxMensagens.ScrollToCaret();
         }
 
         private void AtualizarUsuarios()

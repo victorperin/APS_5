@@ -127,6 +127,7 @@ namespace APS_5.Forms
             | System.Windows.Forms.AnchorStyles.Right)));
             this.BoxMensagens.BackColor = System.Drawing.Color.White;
             this.BoxMensagens.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.BoxMensagens.EnableAutoDragDrop = true;
             this.BoxMensagens.Location = new System.Drawing.Point(12, 12);
             this.BoxMensagens.Name = "BoxMensagens";
             this.BoxMensagens.ReadOnly = true;
