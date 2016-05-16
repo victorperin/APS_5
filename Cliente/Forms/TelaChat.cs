@@ -44,8 +44,10 @@ namespace APS_5.Forms
                 {
                     textoUsuariosOnline += usuario + "\n";
                 }
-                ThreadHelperClass.SetText(this, BoxUsuariosSala, textoUsuariosOnline);
-                
+                if (textoUsuariosOnline.Trim() != BoxUsuariosSala.Text.Trim())
+                {
+                    ThreadHelperClass.SetText(this, BoxUsuariosSala, textoUsuariosOnline.Trim());
+                }
                 Thread.Sleep(3000);
             }
         }
