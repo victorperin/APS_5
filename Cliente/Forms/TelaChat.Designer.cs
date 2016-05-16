@@ -89,6 +89,7 @@ namespace APS_5.Forms
             this.BotaoConfigChat.TabIndex = 4;
             this.toolTip1.SetToolTip(this.BotaoConfigChat, "Configuração/Sair");
             this.BotaoConfigChat.UseVisualStyleBackColor = false;
+            this.BotaoConfigChat.Visible = false;
             this.BotaoConfigChat.Click += new System.EventHandler(this.button1_Click_1);
             // 
             // BoxUsuariosSala
@@ -125,9 +126,9 @@ namespace APS_5.Forms
             this.BoxMensagens.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.BoxMensagens.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(37)))), ((int)(((byte)(38)))));
+            this.BoxMensagens.BackColor = System.Drawing.Color.White;
             this.BoxMensagens.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.BoxMensagens.Enabled = false;
+            this.BoxMensagens.EnableAutoDragDrop = true;
             this.BoxMensagens.Location = new System.Drawing.Point(12, 12);
             this.BoxMensagens.Name = "BoxMensagens";
             this.BoxMensagens.ReadOnly = true;
