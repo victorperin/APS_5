@@ -33,6 +33,7 @@ namespace APS_5.Forms
             {
                 Telas.telaChat = new TelaChat();
                 Telas.telaChat.Show();
+    
                 Telas.telaInicial.Close(true);
             }
             else {
