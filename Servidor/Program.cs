@@ -22,6 +22,7 @@ namespace Servidor
         {
             IPAddress localAdd = IPAddress.Parse(Comunicacao.GetLocalIpAddress());
             TcpListener listener = new TcpListener(localAdd, 3000);
+            Console.WriteLine("IP do servidor: "+Comunicacao.GetLocalIpAddress());
             listener.Start();
             while (true)
             {
