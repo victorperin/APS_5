@@ -22,9 +22,15 @@ namespace APS_5.Forms
 
             if (continuarExecucao) return;
 
-            Telas.usuariosThread.Abort();
-            Telas.mensagensThread.Abort();
-            ComunicacaoServidor.Desconectar();
+            if (
+                Telas.usuariosThread != null
+            )
+            {
+                Telas.usuariosThread.Abort();
+                Telas.mensagensThread.Abort();
+                ComunicacaoServidor.Desconectar();
+            }
+
             Application.Exit();
         }
     }

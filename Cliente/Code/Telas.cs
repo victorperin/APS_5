@@ -14,7 +14,7 @@ namespace APS_5.Code
         public static TelaChat telaChat;
         public static TelaConfig telaConfig;
         public static TelaCreditos telaCreditos;
-        public static Thread usuariosThread;
-        public static Thread mensagensThread;
+        public static Thread usuariosThread = null;
+        public static Thread mensagensThread = null;
     }
 }
