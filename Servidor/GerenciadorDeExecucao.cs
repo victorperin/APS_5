@@ -43,7 +43,6 @@ namespace Servidor
                     Comunicacao.SendResponse(request, new { status = "ok" });
                     break;
                 case "obter-usuarios-online":
-                    Console.WriteLine("Enviando lista de usuarios.");
                     Comunicacao.SendResponse(request, new { status = "ok", data = UsuariosOnline() });
                     break;
 
@@ -53,7 +52,6 @@ namespace Servidor
                     Console.WriteLine("Usuario " + request.Data.usuario + " desconectou.");
                     break;
                 case "obter-mensagens":
-                    Console.WriteLine(mensagens.Count);
                     Comunicacao.SendResponse(request, mensagens);
                     break;
                 case "enviar-mensagem":
