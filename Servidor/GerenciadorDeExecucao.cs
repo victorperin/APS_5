@@ -32,6 +32,11 @@ namespace Servidor
             switch ((string)request.Data.tipo)
             {
                 case "definir-nome":
+                    if (UsuariosOnline().Contains((string)request.Data.nome))
+                    {
+                        Comunicacao.SendResponse(request, new { status = "error" });
+                        break;
+                    }
                     Console.WriteLine("Usuario " + request.Data.nome + " conectou.");
                     request.NomeUsuario = request.Data.nome;
                     conexoes.Add(request);
