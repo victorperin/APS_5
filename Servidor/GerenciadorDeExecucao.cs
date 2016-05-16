@@ -57,6 +57,12 @@ namespace Servidor
                     Comunicacao.SendResponse(request, mensagens);
                     break;
                 case "enviar-mensagem":
+                    if (request.Data.mensagem.ToString().TrimEnd('\r', '\n') == "")
+                    {
+                        Comunicacao.SendResponse(request, new { status = "error" });
+                        break;
+                    }
+                        
                     mensagens.Add(new Mensagem { usuario = request.Data.usuario, mensagem = request.Data.mensagem.ToString().TrimEnd( '\r', '\n' ) });
                     Comunicacao.SendResponse(request, new { status = "ok" });
                     Console.WriteLine(request.Data.usuario + " disse: " + request.Data.mensagem);
