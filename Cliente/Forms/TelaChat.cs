@@ -30,8 +30,8 @@ namespace APS_5.Forms
 
         private void richTextBox1_TextChanged(object sender, EventArgs e)
         {
-            BoxMensagens.SelectionStart = BoxMensagens.Text.Length;
-            BoxMensagens.ScrollToCaret();
+            //BoxMensagens.SelectionStart = BoxMensagens.Text.Length;
+            
         }
 
         private void AtualizarUsuarios()
@@ -45,6 +45,7 @@ namespace APS_5.Forms
                     textoUsuariosOnline += usuario + "\n";
                 }
                 ThreadHelperClass.SetText(this, BoxUsuariosSala, textoUsuariosOnline);
+                
                 Thread.Sleep(3000);
             }
         }
@@ -57,7 +58,13 @@ namespace APS_5.Forms
                 {
                     mensagens += mensagem.usuario + ": " + mensagem.mensagem + "\n";
                 }
-                ThreadHelperClass.SetText(this, BoxMensagens, mensagens);
+                
+                if (mensagens.Trim() != BoxMensagens.Text.Trim())
+                {
+                    ThreadHelperClass.SetText(this, BoxMensagens, mensagens.Trim());
+                    BoxMensagens.SelectionStart = BoxMensagens.TextLength;
+                    BoxMensagens.ScrollToCaret();
+                }
                 Thread.Sleep(1000);
             }
         }
