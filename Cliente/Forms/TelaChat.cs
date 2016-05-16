@@ -73,10 +73,10 @@ namespace APS_5.Forms
 
         private void TelaChat_Load(object sender, EventArgs e)
         {
-            Thread usuariosThread = new Thread(new ThreadStart(AtualizarUsuarios));
-            usuariosThread.Start();
-            Thread mensagensThread = new Thread(new ThreadStart(AtualizarMensagens));
-            mensagensThread.Start();
+            Telas.usuariosThread = new Thread(new ThreadStart(AtualizarUsuarios));
+            Telas.usuariosThread.Start();
+            Telas.mensagensThread = new Thread(new ThreadStart(AtualizarMensagens));
+            Telas.mensagensThread.Start();
         }
 
         private void button1_Click_1(object sender, EventArgs e)
